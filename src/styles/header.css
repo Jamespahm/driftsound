@@ -1,0 +1,130 @@
+/* header.css */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url("../header.jpg") no-repeat center center/cover;
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    height: 65px;
+    padding: 0 2rem;
+    border-bottom: 1px solid #3c3c3c;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.main-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffff;
+    z-index: 4;
+    flex: 1;
+    text-decoration: none;
+}
+
+
+.timer-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 4;
+    justify-content: center;
+    flex: 1;
+}
+
+.timer {
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 4;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.upgrade-btn {
+    background: white;
+    color: #58a694;
+    border-radius: 20px;
+    padding: 0.3rem 1rem;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.header-icons img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+    filter: brightness(0) invert(1);
+}
+
+.header-icons img:hover {
+    opacity: 1;
+}
+
+.slogan {
+    color: #ccc;
+    font-size: 14px;
+    z-index: 4;
+    text-align: center;
+}
+
+/* Ẩn slogan trên màn hình nhỏ hơn 768px (iPad dọc trở xuống) */
+@media screen and (max-width: 768px) {
+    /* .slogan {
+        display: none;
+    } */
+
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .header-icons img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Tùy chọn thêm: ẩn slogan cả trên tablet dọc nhỏ hơn 600px */
+@media screen and (max-width: 600px) {
+    .logo {
+        font-size: 18px;
+    }
+
+    .slogan {
+        display: none;
+    }
+
+    .icon-header-hide {
+        display: none;
+    }
+
+    /* .header-icons {
+        gap: 0.5rem;
+    } */
+}
