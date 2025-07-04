@@ -1,0 +1,48 @@
+/* index.css */
+/* Tailwind base setup */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==== Reset và Layout chuẩn cho Tailwind x Noisli ==== */
+:root {
+  --background-blur: rgba(150, 220, 180, 0.25);
+  /* nền xanh mờ kiểu noisli */
+  --text-color: #ffffff;
+  --accent-color: #ffffffaa;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --card-hover: rgba(255, 255, 255, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-blur);
+  color: var(--text-color);
+}
+
+body {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Đừng đụng vào button mặc định trong Tailwind */
+button {
+  all: unset;
+  /* reset hoàn toàn button để Tailwind lo phần còn lại */
+  cursor: pointer;
+}
+
+/* Nếu cần style riêng cho slider */
+input[type="range"] {
+  accent-color: white;
+}
