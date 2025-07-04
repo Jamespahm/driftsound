@@ -1,23 +1,35 @@
-# 🎧 DriftSound
+# DriftSound 🎵
 
-DriftSound is a minimal ambient sound web app built with React + Vite + TailwindCSS.
+Một trình phát âm thanh môi trường tối giản giúp bạn kết hợp các âm thanh như mưa, sóng biển, gió, tiếng ồn trắng để tập trung, thư giãn và làm việc.
 
-## 🚀 Features
-- 🔊 Play and mix up to 10 relaxing ambient sounds (rain, wind, forest, waves, ...)
-- 🎚️ Volume control per sound
-- ⚡ Fast, lightweight frontend with Vite
-- 💅 Styled with TailwindCSS
+![License](https://img.shields.io/badge/license-MIT-blue.svg) ![Project Status](https://img.shields.io/badge/status-đang%20phát%20triển-yellow.svg) ![React](https://img.shields.io/badge/React-18.x-61DAFB?logo=react)
 
-## 🛠 Tech Stack
-- React
-- Vite
-- Tailwind CSS
-- HTML5 Audio API
+---
 
-## 🔧 Getting Started
+![DriftSound Screenshot](./public/screenshot.png)
+
+### ✨ Tính Năng
+
+- Phát nhiều âm thanh cùng lúc với âm lượng tùy chỉnh.
+- Các playlist có sẵn để bắt đầu nhanh.
+- Hẹn giờ tự động tắt.
+- Giao diện tối giản, dễ sử dụng.
+- Mã nguồn mở và miễn phí.
+
+### 🚀 Công Nghệ
+
+**React.js** | **Vite** | **CSS thuần**
+
+### 🛠️ Cài Đặt & Sử Dụng
 
 ```bash
-git clone https://github.com/<your-username>/driftsound.git
+# Clone repo
+git clone [https://github.com/Jamespahm/driftsound.git](https://github.com/Jamespahm/driftsound.git)
+
+# Cài đặt thư viện
 cd driftsound
+
 npm install
+
+# Chạy dự án
 npm run dev
