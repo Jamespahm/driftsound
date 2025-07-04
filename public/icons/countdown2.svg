@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="38" viewBox="0 0 128 143" fill="none">
+  <!-- Mặt đồng hồ -->
+  <path
+    d="M119.8 31.3l-.6-.6-.4.5L116 34a2.8 2.8 0 0 1-4 0l-1.5 1.5a64 64 0 1 1-48.4-20v-2.6h-.6A3.7 3.7 0 0 1 57.6 9V3.7A3.7 3.7 0 0 1 61.4 0h5.2a3.7 3.7 0 0 1 3.8 3.7V9a3.7 3.7 0 0 1-3.8 3.7H66v2.6a63.8 63.8 0 0 1 42 17.4l1.4-1.5a2.8 2.8 0 0 1 0-4l2.7-2.7-.6-.5a2 2 0 1 1 2.7-2.8l8 8a2 2 0 0 1-3 2.6zM64 19.3a59.7 59.7 0 1 0 60 60 59.8 59.8 0 0 0-60-60zM64 86a6.7 6.7 0 1 1 6.7-6.8A6.7 6.7 0 0 1 64 86zm0-11.7a5 5 0 1 0 5 5 5 5 0 0 0-5-5z"
+    fill="#000"
+    stroke="#000"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Kim phút quay -->
+  <line x1="64" y1="79" x2="64" y2="30" stroke="#000" stroke-width="8" stroke-linecap="round">
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 64 79"
+      to="360 64 79"
+      
+      repeatCount="indefinite"
+    />
+  </line>
+
+  <!-- Tâm đồng hồ -->
+  <circle cx="64" cy="79" r="3" fill="#000" />
+</svg>
