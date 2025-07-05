@@ -90,13 +90,13 @@ function FavoritesTab({ activeSounds, setActiveSounds, volumeMap, setVolumeMap }
         <div className="playlist-container">
             <div className="playlist-buttons" ref={scrollRef}>
                 <button className={`playlist-card save-new ${activeSounds.length === 0 ? 'disabled' : ''}`} onClick={handleSaveCurrentSounds} title={activeSounds.length > 0 ? "Lưu tổ hợp âm thanh hiện tại" : "Hãy bật âm thanh để lưu"}>
-                    <img className="playlist-icon" src="/icons/add.svg" alt="Add new playlist" />
-                    <br />Lưu mới
+                    <img className="playlist-icon" src="/icons/headphone.svg" alt="Add new playlist" />
+                    <br />Add Favorite
                 </button>
                 {customPlaylists.map((item, index) => (
                     <button key={index} className={`playlist-card custom ${activeCustomPlaylistName === item.name ? "active" : ""}`} onClick={() => handleCustomPlaylistClick(item)}>
                         <span className="delete-custom-playlist" onClick={(e) => handleDeleteCustomPlaylist(e, item.name)}>×</span>
-                        <img className="playlist-icon" src="/icons/fan.svg" alt={item.name} />
+                        <img className="playlist-icon" src="/icons/headphone.svg" alt={item.name} />
                         <br />{item.name}
                     </button>
                 ))}
