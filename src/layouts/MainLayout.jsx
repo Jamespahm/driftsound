@@ -55,7 +55,7 @@ function MainLayout({
                     setVolumeMap={setVolumeMap}
                 />
                 <a
-                    href="https://github.com/jamespham/driftsound"
+                    href="https://github.com/jamespahm/driftsound"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="github-link"

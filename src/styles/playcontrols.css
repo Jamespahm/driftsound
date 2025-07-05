@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     position: fixed;
     top: calc(65px + 25px);
-    right: calc((100vw - 850px + 30px) /2);
+    right: calc((100vw - 900px + 34px) /2);
     background-color: rgb(61, 61, 61);
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
 
@@ -13,7 +13,7 @@
     z-index: 10;
 }
 
-@media screen and (max-width: 851px) {
+@media screen and (max-width: 910px) {
     .playlist-controls {
         right: 25px;
     }

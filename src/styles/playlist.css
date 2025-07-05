@@ -1,8 +1,10 @@
 /* --- Playlist Section --- */
 .playlist-section {
     width: 100%;
-    max-width: 850px;
+    max-width: 900px;
     margin: 0 auto;
+    /* margin: 0 calc((100vw - 900px) /2); */
+
     padding: 25px;
     box-sizing: border-box;
     /* position: relative; */
@@ -14,8 +16,8 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 12px;
-    max-width: 850px;
+    gap: 10px;
+    max-width: 900px;
     margin: auto;
 }
 
@@ -51,6 +53,7 @@
     display: flex;
     align-items: center;
     margin-top: 20px;
+    height: 100px;
 }
 
 .playlist-buttons {
@@ -59,7 +62,6 @@
     overflow-x: auto;
     scroll-behavior: smooth;
     gap: 14px;
-    padding: 8px 0;
     scrollbar-width: none;
 }
 
@@ -152,8 +154,8 @@
 .playlist-container::after {
     content: "";
     position: absolute;
-    top: 7px;
-    bottom: 7px;
+    top: 0;
+    bottom: 0;
     width: 120px;
     /* tăng độ rộng mờ */
     z-index: 2;
