@@ -1,7 +1,7 @@
 // File: layouts/MainLayout.jsx
 import { useState, useEffect } from "react";
 import Header from "../components/Header";
-import Playlist from "../components/Playlist";
+import SoundLibrary from "../components/SoundLibrary";
 import SoundGrid from "../components/SoundGrid";
 import PlayControls from "../components/PlayControls";
 
@@ -13,6 +13,8 @@ function MainLayout({
     isPaused,
     setIsPaused
 }) {
+    console.log("[MainLayout] Đang render với activeSounds:", activeSounds);
+
     const [volumeMap, setVolumeMap] = useState({});
 
     useEffect(() => {
@@ -35,7 +37,7 @@ function MainLayout({
                     volumeMap={volumeMap}
                     setVolumeMap={setVolumeMap}
                 />
-                <Playlist
+                <SoundLibrary
                     activeSounds={activeSounds}
                     setActiveSounds={setActiveSounds}
                     pausedSounds={pausedSounds}

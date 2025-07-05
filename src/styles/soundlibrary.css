@@ -11,12 +11,26 @@
 }
 
 /* --- Tabs + Controls --- */
-.playlist-top {
+/* .playlist-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
+    max-width: 900px;
+    margin: auto;
+} */
+/* --- Tabs + Controls --- */
+.playlist-top {
+    display: flex;
+    /* justify-content: space-between; */
+    /* Đẩy các phần tử ra 2 phía */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    flex-wrap: wrap;
+    /* Cho phép xuống dòng nếu không đủ chỗ */
+    gap: 20px;
+    /* Khoảng cách giữa các phần tử */
     max-width: 900px;
     margin: auto;
 }
@@ -180,4 +194,95 @@
 
 .playlist-container.show-right::after {
     opacity: 1;
+}
+
+/* --- CSS cho các nút chức năng mới --- */
+
+.save-current-btn {
+    background: rgba(255, 255, 255, 0.3);
+    color: #e8e8e8;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s;
+    /* margin: auto; */
+
+}
+
+.save-current-btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+    font-size: 13px;
+    color: #ffffff;
+
+    transition: font-size 0.2s;
+}
+
+.playlist-card.custom {
+    position: relative;
+    /* Cần thiết để định vị nút xóa */
+}
+
+.delete-custom-playlist {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 20px;
+    height: 28px;
+    color: white;
+    border: none;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 10;
+}
+
+.playlist-card.custom:hover .delete-custom-playlist {
+    opacity: 1;
+}
+
+.favorites-empty {
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 20px 0;
+    height: 100px;
+    /* Để giữ chiều cao của container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Thêm vào cuối file playlist.css */
+
+/* --- Style cho nút "Lưu mới" --- */
+.playlist-card.save-new {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.playlist-card.save-new:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.7);
+    color: white;
+}
+
+/* Lớp 'disabled' khi không có âm thanh nào được bật */
+.playlist-card.save-new.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-style: solid;
+}
+
+.playlist-card.save-new.disabled:hover {
+    background: rgba(255, 255, 255, 0.1);
+    /* Không thay đổi màu khi hover */
+    border-color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.7);
 }

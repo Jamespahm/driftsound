@@ -7,7 +7,7 @@ import './styles/globalstyle.css'
 import './styles/header.css'
 import './styles/footer.css'
 import './styles/soundcard.css'
-import './styles/playlist.css'
+import './styles/soundlibrary.css'
 import './styles/playcontrols.css'
 import './styles/timer.css'
 

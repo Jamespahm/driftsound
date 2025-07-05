@@ -29,12 +29,12 @@ const playlists = [
     {
         name: "Motivation",
         icon: ocean,
-        sounds: ["waves", "birds", "wind"]
+        sounds: ["waves", "bubbles", "wind"]
     },
     {
         name: "Thinking",
         icon: ocean,
-        sounds: ["waves", "birds", "wind"]
+        sounds: ["waves", "river", "water"]
     },
 
 ];

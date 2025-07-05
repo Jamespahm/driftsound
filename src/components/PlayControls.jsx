@@ -1,7 +1,8 @@
 // File: components/PlayControls.jsx
-import { useEffect, useCallback } from "react";
+import { useCallback } from "react";
 import Timer from "./Timer";
-import sounds from "../data/sounds";
+import playlists from "../data/playlists";
+import soundsData from "../data/sounds";
 
 function PlayControls({
     activeSounds,
@@ -12,27 +13,16 @@ function PlayControls({
     setIsPaused,
     setVolumeMap
 }) {
-    useEffect(() => {
-        console.log("[DEBUG] activeSounds thay đổi:", activeSounds);
-
-        if (isPaused && activeSounds.length > 0) {
-            console.log("[AUTO-RESUME] Bật lại sound thủ công, reset trạng thái Pause");
-            setPausedSounds([]);
-            setIsPaused(false);
-        }
-    }, [activeSounds, isPaused, setPausedSounds, setIsPaused]);
 
     const handlePauseClick = useCallback(() => {
         if (isPaused) {
             if (pausedSounds.length > 0) {
-                console.log("[RESUME] Resume lại:", pausedSounds);
                 setActiveSounds([...pausedSounds]);
                 setPausedSounds([]);
                 setIsPaused(false);
             }
         } else {
             if (activeSounds.length > 0) {
-                console.log("[PAUSE] Đang tạm dừng:", activeSounds);
                 setPausedSounds([...activeSounds]);
                 setActiveSounds([]);
                 setIsPaused(true);
@@ -41,22 +31,27 @@ function PlayControls({
     }, [isPaused, pausedSounds, activeSounds, setActiveSounds, setPausedSounds, setIsPaused]);
 
     const handleRandomClick = useCallback(() => {
-        const soundIds = sounds.map(s => s.id);
-        const shuffled = [...soundIds].sort(() => 0.5 - Math.random());
-        const randomSounds = shuffled.slice(0, 3);
-
-        console.log("[RANDOM] Phát ngẫu nhiên:", randomSounds);
-
+        if (playlists.length === 0) return;
+        const randomIndex = Math.floor(Math.random() * playlists.length);
+        const randomPlaylist = playlists[randomIndex];
+        const playlistSounds = randomPlaylist.sounds;
+        const defaultVolumeMap = {};
+        playlistSounds.forEach(soundId => {
+            const soundInfo = soundsData.find(s => s.id === soundId);
+            if (soundInfo) {
+                defaultVolumeMap[soundId] = soundInfo.defaultVolume ?? 0.25;
+            }
+        });
+        setVolumeMap(prev => ({ ...prev, ...defaultVolumeMap }));
+        setActiveSounds(playlistSounds);
         setPausedSounds([]);
         setIsPaused(false);
-        setActiveSounds(randomSounds);
-    }, [setActiveSounds, setPausedSounds, setIsPaused]);
+    }, [setActiveSounds, setPausedSounds, setIsPaused, setVolumeMap]);
 
     const handleTrashClick = useCallback(() => {
-        console.log("[TRASH] Dừng toàn bộ âm thanh");
         setActiveSounds([]);
         setPausedSounds([]);
-        setIsPaused(true);
+        setIsPaused(false);
         setVolumeMap({});
     }, [setActiveSounds, setPausedSounds, setIsPaused, setVolumeMap]);
 
@@ -66,16 +61,18 @@ function PlayControls({
                 <Timer
                     isDisabled={activeSounds.length === 0 && pausedSounds.length === 0}
                     activeSounds={activeSounds}
+                    pausedSounds={pausedSounds}
                     isPaused={isPaused}
-                    setPausedSounds={setPausedSounds} // <-- SỬA LỖI 3: Thêm prop này
+                    // ✅ SỬA LẠI: Thêm lại prop "setPausedSounds"
+                    setPausedSounds={setPausedSounds}
                     onTimeout={() => {
-                        console.log("[TIMER] Hết giờ, dừng âm thanh.");
-                        setActiveSounds([]);
-                        setIsPaused(true);
+                        if (activeSounds.length > 0) {
+                            setPausedSounds([...activeSounds]);
+                            setActiveSounds([]);
+                            setIsPaused(true);
+                        }
                     }}
-                    handlePauseClick
                 />
-
             </div>
 
             <button className="hide-mbb" onClick={handlePauseClick}>
