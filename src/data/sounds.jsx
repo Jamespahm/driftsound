@@ -43,7 +43,7 @@ const sounds = [
         name: 'River',
         icon: '/icons/water-stream.svg',
         src: '/sounds/river.mp3',
-        defaultVolume: 0.1
+        defaultVolume: 0.2
     },
 
     {

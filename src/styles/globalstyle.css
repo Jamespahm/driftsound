@@ -75,19 +75,3 @@ button {
     cursor: pointer;
 
 }
-
-
-.slogan {
-    text-align: center;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 300;
-    padding: 1rem 2rem;
-    opacity: 0.85;
-    z-index: 3;
-}
-
-.slogan strong {
-    color: #58a694;
-    font-weight: 500;
-}

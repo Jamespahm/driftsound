@@ -8,7 +8,7 @@
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
     height: 65px;
-    padding: 0 2rem;
+    padding: 0 1rem;
     border-bottom: 1px solid #3c3c3c;
     position: sticky;
     top: 0;
@@ -30,6 +30,7 @@
     font-weight: bold;
     color: #ffff;
     z-index: 4;
+    padding: 0 1rem;
     flex: 1;
     text-decoration: none;
 }
@@ -87,11 +88,17 @@
     opacity: 1;
 }
 
+
 .slogan {
-    color: #ccc;
+    color: #d3d3d3;
     font-size: 14px;
     z-index: 4;
     text-align: center;
+}
+
+.slogan strong {
+    color: #13c098;
+    font-weight: 500;
 }
 
 /* Ẩn slogan trên màn hình nhỏ hơn 768px (iPad dọc trở xuống) */

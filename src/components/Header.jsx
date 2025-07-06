@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 // ✅ MỚI: Nhận props từ cha
-function Header({ masterVolume, setMasterVolume }) {
+function Header({ masterVolume, setMasterVolume, onMuteToggle }) {
 
     const handleMasterVolumeChange = (e) => {
         setMasterVolume(parseFloat(e.target.value));
@@ -31,7 +31,11 @@ function Header({ masterVolume, setMasterVolume }) {
                 <div className="header-icons">
                     {/* ✅ MỚI: Bọc icon và thanh trượt vào một div */}
                     <div className="volume-control-container">
-                        <img className="icon-header-hide" src={getVolumeIcon()} alt="Volume" />
+                        <img
+                            className="icon-header-hide"
+                            src={getVolumeIcon()} alt="Volume"
+                            onClick={onMuteToggle}
+                        />
                         <div className="volume-slider-wrapper">
                             <input
                                 type="range"

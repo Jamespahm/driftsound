@@ -80,6 +80,7 @@ function Timer({ onTimeout, isDisabled, activeSounds, isPaused, setPausedSounds 
     return (
         <div className={`playlist-timer-wrapper ${isActuallyCountingDown ? "active" : "inactive"}`}>
             <input
+                id="input-timer"
                 className={`playlist-timer-input ${isActuallyCountingDown ? 'running' : 'paused'}`}
                 type="text"
                 value={`${hours}:${minutes}`}

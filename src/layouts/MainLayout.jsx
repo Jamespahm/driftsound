@@ -13,14 +13,20 @@ function MainLayout({
     isPaused,
     setIsPaused,
     masterVolume,
-    setMasterVolume
+    setMasterVolume,
+    onMuteToggle // ✅ MỚI: Nhận prop
+
 }) {
     const [volumeMap, setVolumeMap] = useState({});
 
     return (
         <>
             <div className="background-overlay"></div>
-            <Header masterVolume={masterVolume} setMasterVolume={setMasterVolume} />
+            <Header
+                masterVolume={masterVolume}
+                setMasterVolume={setMasterVolume}
+                onMuteToggle={onMuteToggle}
+            />
 
             <main id="main-content" className="main-content">
                 <PlayControls
@@ -52,7 +58,7 @@ function MainLayout({
                     rel="noopener noreferrer"
                     className="github-link"
                 >
-                    Free and Open-Source
+                    Open-Source
                 </a>
                 <button className="help-btn">?</button>
             </main>
