@@ -1,5 +1,5 @@
 // File: layouts/MainLayout.jsx
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Header from "../components/Header";
 import SoundLibrary from "../components/SoundLibrary";
 import SoundGrid from "../components/SoundGrid";
@@ -11,20 +11,16 @@ function MainLayout({
     pausedSounds,
     setPausedSounds,
     isPaused,
-    setIsPaused
+    setIsPaused,
+    masterVolume,
+    setMasterVolume
 }) {
-    console.log("[MainLayout] Đang render với activeSounds:", activeSounds);
-
     const [volumeMap, setVolumeMap] = useState({});
-
-    useEffect(() => {
-        console.log("[MainLayout] volumeMap khởi tạo:", volumeMap);
-    }, [volumeMap]);
 
     return (
         <>
             <div className="background-overlay"></div>
-            <Header />
+            <Header masterVolume={masterVolume} setMasterVolume={setMasterVolume} />
 
             <main id="main-content" className="main-content">
                 <PlayControls
@@ -34,27 +30,21 @@ function MainLayout({
                     setPausedSounds={setPausedSounds}
                     isPaused={isPaused}
                     setIsPaused={setIsPaused}
-                    volumeMap={volumeMap}
                     setVolumeMap={setVolumeMap}
                 />
                 <SoundLibrary
                     activeSounds={activeSounds}
                     setActiveSounds={setActiveSounds}
-                    pausedSounds={pausedSounds}
-                    setPausedSounds={setPausedSounds}
-                    isPaused={isPaused}
-                    setIsPaused={setIsPaused}
                     volumeMap={volumeMap}
                     setVolumeMap={setVolumeMap}
                 />
                 <SoundGrid
                     activeSounds={activeSounds}
                     setActiveSounds={setActiveSounds}
-                    pausedSounds={pausedSounds}
-                    setPausedSounds={setPausedSounds}
-                    isPaused={isPaused}
                     volumeMap={volumeMap}
                     setVolumeMap={setVolumeMap}
+                    // ✅ ĐÃ THÊM prop 'masterVolume' để truyền xuống
+                    masterVolume={masterVolume}
                 />
                 <a
                     href="https://github.com/jamespahm/driftsound"

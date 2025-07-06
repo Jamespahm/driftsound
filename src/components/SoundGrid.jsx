@@ -1,35 +1,38 @@
 // File: components/SoundGrid.jsx
-import sounds from '../data/sounds';
+import soundsData from '../data/sounds';
 import SoundCard from './SoundCard';
 
+// ✅ ĐÃ NHẬN THÊM prop "masterVolume"
 function SoundGrid({
     activeSounds,
     setActiveSounds,
     volumeMap,
     setVolumeMap,
-    // Các props khác không cần dùng ở đây nữa
+    masterVolume
 }) {
 
-    // ✅ LOGIC ĐÃ ĐƯỢC CHUYỂN LÊN ĐÂY
     const handleToggleSound = (soundId) => {
-        setActiveSounds(currentActive => {
-            if (currentActive.includes(soundId)) {
-                return currentActive.filter(id => id !== soundId);
-            }
-            return [...currentActive, soundId];
-        });
+        const isActive = activeSounds.includes(soundId);
+        if (isActive) {
+            setActiveSounds(currentActive => currentActive.filter(id => id !== soundId));
+        } else {
+            setActiveSounds(currentActive => [...currentActive, soundId]);
+            setVolumeMap(currentMap => {
+                if (currentMap[soundId] === undefined) {
+                    const soundInfo = soundsData.find(s => s.id === soundId);
+                    const defaultVolume = soundInfo?.defaultVolume ?? 0.25;
+                    return { ...currentMap, [soundId]: defaultVolume };
+                }
+                return currentMap;
+            });
+        }
     };
 
-    // ✅ LOGIC VOLUME CŨNG ĐƯỢC CHUYỂN LÊN ĐÂY
     const handleVolumeChange = (soundId, newVolume) => {
         setVolumeMap(prev => ({ ...prev, [soundId]: newVolume }));
-
-        // Nếu kéo volume về 0 thì tắt âm thanh
         if (newVolume === 0) {
             setActiveSounds(currentActive => currentActive.filter(id => id !== soundId));
-        }
-        // Nếu đang tắt mà kéo volume lên, thì bật lại âm thanh
-        else if (!activeSounds.includes(soundId)) {
+        } else if (!activeSounds.includes(soundId)) {
             setActiveSounds(currentActive => [...currentActive, soundId]);
         }
     };
@@ -37,7 +40,7 @@ function SoundGrid({
     return (
         <section className="soundcard-section">
             <div className="soundcard-grid">
-                {sounds.map(sound => {
+                {soundsData.map((sound) => {
                     const isPlaying = activeSounds.includes(sound.id);
                     const volume = volumeMap[sound.id] ?? sound.defaultVolume ?? 0.25;
 
@@ -45,11 +48,12 @@ function SoundGrid({
                         <SoundCard
                             key={sound.id}
                             sound={sound}
-                            // === Props được truyền xuống đơn giản hơn ===
                             isPlaying={isPlaying}
                             volume={volume}
+                            // ✅ ĐÃ TRUYỀN `masterVolume` XUỐNG CHO SoundCard
+                            masterVolume={masterVolume}
                             onToggle={() => handleToggleSound(sound.id)}
-                            onVolumeChange={(newVolume) => handleVolumeChange(sound.id, newVolume)}
+                            onVolumeChange={(newVol) => handleVolumeChange(sound.id, newVol)}
                         />
                     );
                 })}

@@ -1,55 +1,64 @@
 // File: components/SoundCard.jsx
+
 import React, { useEffect, useRef } from 'react';
 
 function SoundCard({
     sound,
     isPlaying,
     volume,
+    masterVolume, // Prop mới cho âm lượng tổng
     onToggle,
     onVolumeChange
 }) {
     const audioRef = useRef(null);
 
-    // Xử lý khi thanh trượt volume thay đổi
+    // Xử lý sự kiện khi người dùng kéo thanh trượt volume
     const handleSliderChange = (e) => {
         const newVolume = parseFloat(e.target.value);
-        // Báo cho cha (SoundGrid) biết là volume đã thay đổi
+        // Báo cho component cha biết là volume riêng đã thay đổi
         onVolumeChange(newVolume);
     };
 
-    // Đồng bộ trạng thái isPlaying với thẻ <audio>
+    // useEffect để play/pause âm thanh
     useEffect(() => {
         const audio = audioRef.current;
         if (!audio) return;
 
         if (isPlaying) {
-            audio.volume = volume; // Đặt volume trước khi play
-            audio.play().catch(error => console.log("Audio play failed:", error));
+            // ✅ Tính toán âm lượng cuối cùng = volume riêng * volume tổng
+            const finalVolume = volume * masterVolume;
+            audio.volume = finalVolume;
+            audio.play().catch(error => console.log("Lỗi khi phát audio:", error));
         } else {
             audio.pause();
             audio.currentTime = 0;
         }
-    }, [isPlaying, sound.src]); // Thêm sound.src để audio load lại khi cần
+    }, [isPlaying, sound.src]); // Chạy lại khi trạng thái play hoặc nguồn audio thay đổi
 
-    // Đồng bộ volume khi state thay đổi
+    // useEffect để cập nhật volume khi có sự thay đổi
     useEffect(() => {
         const audio = audioRef.current;
         if (audio && isPlaying) {
-            audio.volume = volume;
+            // ✅ Tính toán và cập nhật lại âm lượng cuối cùng
+            const finalVolume = volume * masterVolume;
+            audio.volume = finalVolume;
         }
-    }, [volume, isPlaying]);
+    }, [volume, masterVolume, isPlaying]); // Chạy lại khi 1 trong 3 giá trị này thay đổi
 
-    // Thiết lập loop cho audio
+    // useEffect để thiết lập lặp lại cho âm thanh
     useEffect(() => {
         const audio = audioRef.current;
-        if (audio) audio.loop = true;
+        if (audio) {
+            audio.loop = true;
+        }
     }, []);
 
     return (
         // Khi click vào thẻ, gọi hàm onToggle từ cha
-        <div className={`sound-icon ${isPlaying ? 'active' : ''}`} onClick={onToggle}>
+        <div className={`sound-card ${isPlaying ? 'active' : ''}`} onClick={onToggle}>
             <audio ref={audioRef} src={sound.src}></audio>
-            <img src={sound.icon} alt={sound.name} />
+            <img className="sound-icon" src={sound.icon} alt={sound.name} />
+            {/* <span className="sound-name">{sound.name}</span> */}
             <div
                 className="volume-wrapper"
                 style={{ visibility: isPlaying ? 'visible' : 'hidden' }}
@@ -69,5 +78,4 @@ function SoundCard({
     );
 }
 
-// Dùng React.memo để tránh re-render không cần thiết
-export default SoundCard;
+export default React.memo(SoundCard);
