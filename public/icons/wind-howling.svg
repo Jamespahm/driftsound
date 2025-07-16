@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <title>Wind - Strong Breeze</title>
+  <g fill="none" fill-rule="evenodd">
+
+    <!-- 💨 Dòng gió trên: Gió mạnh với đoạn đầu mượt, đuôi cong nhẹ -->
+    <path fill="currentColor" fill-rule="nonzero"
+      d="M1.5 22
+        a1.5 1.5 0 0 1 0-3H27
+        a5 5 0 0 0 0-10
+        c-2.9 0-5 1.9-5 4.5
+        a1.5 1.5 0 0 1-3 0
+        c0-4.4 3.5-7.5 8-7.5
+        a8 8 0 1 1 0 16H1.5z" />
+
+    <!-- 💨 Dòng gió dưới: Gió mạnh, có hiệu ứng quay trở lại -->
+    <path fill="currentColor" fill-rule="nonzero"
+      d="M26 44
+         a1.5 1.5 0 0 1 3 0
+         c0 2.6 2.1 4.5 5 4.5
+         a5 5 0 0 0 0-10H1.5
+         a1.5 1.5 0 0 1 0-3H34
+         a8 8 0 1 1 0 16
+         c-4.5 0-8-3.1-8-7.5z" />
+
+    <!-- 💨 Dòng gió giữa: Gió ngang mượt, mô phỏng đối lưu khí -->
+    <path fill="currentColor" fill-rule="nonzero"
+      d="M1.5 30
+         a1.5 1.5 0 0 1 0-3H48
+         a5 5 0 0 0 0-10
+         c-2.9 0-5 1.9-5 4.5
+         a1.5 1.5 0 0 1-3 0
+         c0-4.4 3.5-7.5 8-7.5
+         a8 8 0 1 1 0 16H1.5z" />
+
+    <!-- 📦 Layer nền để tránh lỗi viewBox -->
+    <path d="M0 0h56v56H0z" />
+  </g>
+</svg>

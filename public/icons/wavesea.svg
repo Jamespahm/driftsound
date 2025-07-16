@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <title>Sea Waves - Curved Crest Style</title>
+  <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- 🌊 Sóng biển - đường lượn sóng có đỉnh nhọn -->
+    <path d="M1 20
+             C6  11, 12 23, 14 20
+             C18 11, 27 23, 27 20
+             C30 11, 42 23, 40 20
+             C42 11, 56 23, 52 20
+             " />
+
+<path d="M1 32
+             C6  23, 12 33, 14 32
+             C18 23, 27 33, 27 32
+             C30 23, 42 33, 40 32
+             C42 23, 56 33, 52 32
+             " />
+<path d="M1 44
+             C6  35, 12 45, 14 44
+             C18 35, 27 45, 27 44
+             C30 35, 42 45, 40 44
+             C42 35, 56 45, 52 44
+             " />
+
+  </g>
+</svg>

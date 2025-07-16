@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60px" height="60px" viewBox="-10 0 565 450" fill="none" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+  <g>
+    <!-- 🐶 Thân chính của chó -->
+    <path d="M99 193c-6-1-36-5-49-29-5-9-5-26 0-32 1-1 3-3 10-1 12 3 25-4 28-16s-4-25-16-28c-24-6-45 0-59 18-17 22-19 59-5 84 18 33 51 45 71 50l6 23-42 79c-2 3-2 6-2 10v99a23 23 0 0 0 46 0v-65l53-48c29 7 71 15 109 15 42 0 96-10 127-17v116a23 23 0 0 0 46 0V276l-133-83H99z" />
+   
+    <circle cx="325" cy="195" r="6"/>
+	<circle cx="354" cy="214" r="6"/>
+	<circle cx="384" cy="233" r="6"/>
+	<circle cx="416" cy="251" r="6"/>
+
+    	<circle cx="445" cy="145" r="5"/>
+
+    <!-- 🐶 Đầu chó và chi tiết tai, mũi -->
+    <path d="M543 174l-99-66v-52c0-5-3-9-8-11-5-1-10 0-13 5l-86 129 96 60 6-16 59 17c5 1 10-1 13-5l22-34 11-11c2-2 3-6 3-9s-2-6-5-8z" />
+  </g>
+</svg>

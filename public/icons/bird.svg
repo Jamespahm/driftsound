@@ -1,0 +1,33 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="56" height="56"
+  viewBox="-50 -50 350 300"
+  stroke="currentColor"
+  fill="none"
+  stroke-width="13"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <title>Bird - Gemini Style Resized (Tail Fix)</title>
+
+  <!-- 🐦 Hình chim dạng bo đặc trưng Gemini-style -->
+  <path d="M236.44,73.34
+           L213.21,57.86
+           A60,60,0,0,0,96,76
+           V93.19L1.75,211
+           A8,8,0,0,0,8,224H112
+           A104.11,104.11,0,0,0,216,120
+           V100.28l20.44-13.62
+           a8,8,0,0,0,0-13.32Z
+
+           M110.15,141.12l-40,48
+           a8,8,0,0,1-12.3-10.24l40-48
+           a8,8,0,1,1,12.3,10.24Z
+           " />
+
+  <!-- ⚫ Hạt trang trí đơn giản (hoặc mắt chim) -->
+    <circle cx="165" cy="55" r="5" fill="currentColor" />
+
+  <circle cx="90" cy="240" r="10" fill="currentColor" />
+</svg>
+

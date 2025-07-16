@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <title>River Flowing - Rounded Both Ends</title>
+  <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- 🌊 Sóng nước 1 -->
+    <path d="
+      M1 18
+      Q7 13, 14 18
+      Q21 23, 28 18
+      Q35 13, 42 18
+      Q49 23, 56 18
+    "/>
+    
+    <!-- 🌊 Sóng nước 2 -->
+    <path d="
+      M1 30
+      Q7 25, 14 30
+      Q21 35, 28 30
+      Q35 25, 42 30
+      Q49 35, 56 30
+    "/>
+
+    <!-- 🌊 Sóng nước 3 -->
+    <path d="
+      M1 42
+      Q7 37, 14 42
+      Q21 47, 28 42
+      Q35 37, 42 42
+      Q49 47, 56 42
+    "/>
+  </g>
+</svg>
