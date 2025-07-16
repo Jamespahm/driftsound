@@ -48,7 +48,7 @@ const sounds = [
         name: 'Howlingwind',
         icon: '/icons/wind-howling.svg',
         src: '/sounds/wind-howling.mp3',
-        defaultVolume: 0.25
+        defaultVolume: 0.15
     },
     {
         id: 'river',
@@ -81,7 +81,7 @@ const sounds = [
         name: 'Underwater',
         icon: '/icons/underwater.svg',
         src: '/sounds/underwater.mp3',
-        defaultVolume: 0.1
+        defaultVolume: 0.2
     },
     {
         id: 'bubbles',
@@ -99,9 +99,16 @@ const sounds = [
     },
 
 
+
+
     ////////////////////////
-
-
+    {
+        id: 'wind-chime',
+        name: 'wind-chime',
+        icon: '/icons/wind-chime.svg',
+        src: '/sounds/wind-chime.mp3',
+        defaultVolume: 0.25
+    },
     {
         id: 'campfire',
         name: 'Campfire',
@@ -116,36 +123,38 @@ const sounds = [
         src: '/sounds/forest.mp3',
         defaultVolume: 0.05
     },
-    {
-        id: 'leaves',
-        name: 'Leaves',
-        icon: '/icons/leaves.svg',
-        src: '/sounds/leaves.mp3',
-        defaultVolume: 0.25
-    },
+
     {
         id: 'singingbowl',
         name: 'Singingbowl',
         icon: '/icons/singingbowl.svg',
         src: '/sounds/singingbowl.mp3',
-        defaultVolume: 0.25
+        defaultVolume: 0.2
     },
 
     ////////////////////////
+
+    {
+        id: 'bird',
+        name: 'Bird',
+        icon: '/icons/bird.svg',
+        src: '/sounds/bird.mp3',
+        defaultVolume: 0.15
+    },
 
     {
         id: 'dog',
         name: 'Dog',
         icon: '/icons/dog.svg',
         src: '/sounds/dog.mp3',
-        defaultVolume: 0.05
+        defaultVolume: 0.08
     },
     {
-        id: 'cat',
-        name: 'Cat',
+        id: 'cat-purring',
+        name: 'Cat-purring',
         icon: '/icons/cat.svg',
-        src: '/sounds/cat.mp3',
-        defaultVolume: 0.05
+        src: '/sounds/cat-purring.mp3',
+        defaultVolume: 0.8
     },
     {
         id: 'bee',
@@ -156,12 +165,18 @@ const sounds = [
     },
     {
         id: 'cricket',
-        name: 'cricket',
+        name: 'Cricket',
         icon: '/icons/cricket.svg',
         src: '/sounds/cricket.mp3',
-        defaultVolume: 0.05
+        defaultVolume: 0.6
     },
-
+    {
+        id: 'frog',
+        name: 'Frog',
+        icon: '/icons/frog.svg',
+        src: '/sounds/frog.mp3',
+        defaultVolume: 0.06
+    },
 
     ////////////////////////
 
@@ -203,7 +218,7 @@ const sounds = [
         name: 'fireworks',
         icon: '/icons/fireworks.svg',
         src: '/sounds/fireworks.mp3',
-        defaultVolume: 0.05
+        defaultVolume: 0.1
     },
 
     {
