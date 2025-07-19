@@ -19,6 +19,11 @@
 }
 
 @media screen and (max-width: 600px) {
+    .playlist-controls {
+        gap: 3px;
+
+    }
+
     .hide-mb {
         display: none;
     }
@@ -56,12 +61,19 @@
 @media screen and (max-width: 600px) {
     .playlist-timer-wrapper {
         background: transparent;
-        padding: 4px 0 4px 8px;
+        padding: 3px 0 3px 5px;
+        ;
+    }
+
+    .playlist-timer-wrapper button {
+        padding: 0 3px;
     }
 
     .hide-mbb {
-        padding: 0 10px 0 0;
+        padding: 0 6px 0 0;
     }
+
+
 }
 
 .playlist-timer-input {

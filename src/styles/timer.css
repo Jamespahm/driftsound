@@ -1,10 +1,4 @@
 /*File timer.css */
-.counter {
-    font-size: 14px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0.2rem 1rem;
-    border-radius: 12px;
-}
 
 .reset-btn {
     font-size: 18px;
@@ -19,7 +13,6 @@
     text-align: center;
     border: none;
     background: transparent;
-    /* width: 80px; */
     transition: color 0.3s, opacity 0.3s;
 }
 
