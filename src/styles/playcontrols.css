@@ -10,6 +10,7 @@
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
     border-radius: 8px;
     z-index: 10;
+    padding-right: 8px;
 }
 
 @media screen and (max-width: 910px) {
@@ -62,17 +63,20 @@
     .playlist-timer-wrapper {
         background: transparent;
         padding: 3px 0 3px 5px;
-        ;
+
     }
 
     .playlist-timer-wrapper button {
-        padding: 0 3px;
+        padding: 0 4px;
     }
 
     .hide-mbb {
         padding: 0 6px 0 0;
     }
 
+    .playlist-controls {
+        padding-right: 2px;
+    }
 
 }
 
